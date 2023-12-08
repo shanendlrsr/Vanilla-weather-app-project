@@ -6,4 +6,3 @@ searchFormElement.addEventListener("submit", function (event) {
   cityHeadingElement.innerHTML = searchInput.value;
 });
 
-
