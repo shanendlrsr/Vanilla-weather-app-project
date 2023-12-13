@@ -100,9 +100,11 @@ main {
   margin-bottom: 10px;
 }
 
-.forecast-icon {
-  font-size: 38px;
-  text-align: center;
+.forecast-icon{
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 0 auto;
 }
 
 .forecast-temperatures {
@@ -114,7 +116,7 @@ main {
 }
 
 .forecast-temperature {
-  padding: 0 10px;
+  padding: 0 5px;
 }
 footer {
   border-top: 1px solid #f9f7fe;
