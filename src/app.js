@@ -40,57 +40,59 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let videoElement = document.querySelector(".video-background");
   if (response.data.condition.icon.includes("few-clouds-day")) {
-    //FINAL
     videoElement.src =
       "https://v3.cdnpk.net/videvo_files/video/free/2020-07/large_watermarked/06_1596083776_preview.mp4";
   } else if (response.data.condition.icon.includes("scattered-clouds-day")) {
-    //FINAL
     videoElement.src =
       "https://v3.cdnpk.net/videvo_files/video/free/2014-06/large_watermarked/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview.mp4";
   } else if (response.data.condition.icon.includes("broken-clouds-day")) {
     videoElement.src =
       "https://cdn.coverr.co/videos/coverr-cloudy-sky-2765/1080p.mp4";
   } else if (response.data.condition.icon.includes("shower-rain-day")) {
-    //FINAL
     videoElement.src =
       "https://cdn.pixabay.com/vimeo/590779437/window-85180.mp4?width=1280&hash=c7ab3e6fad586b95060900bc09b322e17d558112";
   } else if (response.data.condition.icon.includes("rain-day")) {
-    //FINAL
     videoElement.src =
       "https://cdn.pixabay.com/vimeo/889684869/rain-191224.mp4?width=1280&hash=57923f16faae1afbf18c982fefbc366c3373013c";
   } else if (response.data.condition.icon.includes("thunderstorm-day")) {
-    //FINAL
     videoElement.src =
       "https://v3.cdnpk.net/videvo_files/video/free/2016-09/large_watermarked/lightning02_preview.mp4";
   } else if (response.data.condition.icon.includes("snow-day")) {
-    //FINAL
     videoElement.src =
       "https://cdn.pixabay.com/vimeo/724673835/stars-120915.mp4?width=1280&hash=6eb4e8d19a86547094adc6366ad7754055d20bd1";
   } else if (response.data.condition.icon.includes("mist-day")) {
-    //FINAL
     videoElement.src =
       "https://cdn.pixabay.com/vimeo/887815676/sky-190332.mp4?width=1280&hash=1588fff1e092b3d0b045d87ad806a810faefc0e0";
   } else if (response.data.condition.icon.includes("clear-sky-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/767056247/stars-137617.mp4?width=1280&hash=059c853abee3020dfcfe552965d6af19434d19c4";
   } else if (response.data.condition.icon.includes("few-clouds-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/374487175/moon-29238.mp4?width=640&hash=c25270f6fda48e77e0e9b8db429c3b28bb782edb";
   } else if (response.data.condition.icon.includes("scattered-clouds-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/362518474/crescent-moon-27186.mp4?width=1280&hash=57166797a2fb86db79f4e0de10dff2a527435637";
   } else if (response.data.condition.icon.includes("broken-clouds-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/496654889/clouds-60766.mp4?width=1280&hash=350f7ed45dd0068dd38cc6e9e8a4b45fb190c85a";
   } else if (response.data.condition.icon.includes("shower-rain-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/368501609/rain-28236.mp4?width=640&hash=834994beb632a32cbbe285cce4a1868392d5d37f";
   } else if (response.data.condition.icon.includes("rain-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/540486894/rain-71863.mp4?width=636&hash=11e03d159a59d3ed1ab06e8e0e6918a15094cd5d";
   } else if (response.data.condition.icon.includes("thunderstorm-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/819589720/storm-159780.mp4?width=1280&hash=d8f3ccdfe6ea1e57a8a062f77bb61eef3a1c1e1c";
   } else if (response.data.condition.icon.includes("snow-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/664525219/nature-103801.mp4?width=1280&hash=05bb9d0e16a0f61a5919f7ed1a2766224104acc1";
   } else if (response.data.condition.icon.includes("mist-night")) {
-    videoElement.src = "";
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/784867462/stars-144597.mp4?width=1280&hash=8d3896aba56eb66785dabb9273bebdaf74054711";
   } else {
     videoElement.src =
-      "https://cdn.coverr.co/videos/coverr-cloudy-sky-2765/1080p.mp4"; //FINAL
+      "https://cdn.pixabay.com/vimeo/291585321/aerial-18390.mp4?width=1280&hash=b7ad962350d7df22343b767c33fc953322f3166d"; //FINAL
   }
 
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="icon"/>`;
