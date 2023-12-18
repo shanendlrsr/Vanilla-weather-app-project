@@ -104,7 +104,6 @@ function displayTemperature(response) {
   windElement.innerHTML = `${wind} km/h`;
 
   getForecast(response.data.city);
-  console.log(response.data.condition);
 }
 
 function searchCity(city) {
