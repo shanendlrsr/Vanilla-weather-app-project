@@ -38,6 +38,60 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#current-date");
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
+  let videoElement = document.querySelector(".video-background");
+  if (response.data.condition.icon.includes("few-clouds-day")) {
+    //FINAL
+    videoElement.src =
+      "https://v3.cdnpk.net/videvo_files/video/free/2020-07/large_watermarked/06_1596083776_preview.mp4";
+  } else if (response.data.condition.icon.includes("scattered-clouds-day")) {
+    //FINAL
+    videoElement.src =
+      "https://v3.cdnpk.net/videvo_files/video/free/2014-06/large_watermarked/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview.mp4";
+  } else if (response.data.condition.icon.includes("broken-clouds-day")) {
+    videoElement.src =
+      "https://cdn.coverr.co/videos/coverr-cloudy-sky-2765/1080p.mp4";
+  } else if (response.data.condition.icon.includes("shower-rain-day")) {
+    //FINAL
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/590779437/window-85180.mp4?width=1280&hash=c7ab3e6fad586b95060900bc09b322e17d558112";
+  } else if (response.data.condition.icon.includes("rain-day")) {
+    //FINAL
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/889684869/rain-191224.mp4?width=1280&hash=57923f16faae1afbf18c982fefbc366c3373013c";
+  } else if (response.data.condition.icon.includes("thunderstorm-day")) {
+    //FINAL
+    videoElement.src =
+      "https://v3.cdnpk.net/videvo_files/video/free/2016-09/large_watermarked/lightning02_preview.mp4";
+  } else if (response.data.condition.icon.includes("snow-day")) {
+    //FINAL
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/724673835/stars-120915.mp4?width=1280&hash=6eb4e8d19a86547094adc6366ad7754055d20bd1";
+  } else if (response.data.condition.icon.includes("mist-day")) {
+    //FINAL
+    videoElement.src =
+      "https://cdn.pixabay.com/vimeo/887815676/sky-190332.mp4?width=1280&hash=1588fff1e092b3d0b045d87ad806a810faefc0e0";
+  } else if (response.data.condition.icon.includes("clear-sky-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("few-clouds-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("scattered-clouds-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("broken-clouds-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("shower-rain-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("rain-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("thunderstorm-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("snow-night")) {
+    videoElement.src = "";
+  } else if (response.data.condition.icon.includes("mist-night")) {
+    videoElement.src = "";
+  } else {
+    videoElement.src =
+      "https://cdn.coverr.co/videos/coverr-cloudy-sky-2765/1080p.mp4"; //FINAL
+  }
 
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="icon"/>`;
   cityElement.innerHTML = response.data.city;
@@ -48,6 +102,7 @@ function displayTemperature(response) {
   windElement.innerHTML = `${wind} km/h`;
 
   getForecast(response.data.city);
+  console.log(response.data.condition);
 }
 
 function searchCity(city) {
