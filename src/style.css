@@ -1,16 +1,17 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; 
-  margin: 0; 
+  height: 100vh;
+  margin: 0;
   overflow: hidden;
+  color: #000;
 }
 
-
 a {
-  color: aqua;
+  color: rgb(55, 151, 220);
+  text-shadow: 0px 0px 3px rgba(255,255,255,0.2);
 }
 .video-background {
   position: fixed;
@@ -22,7 +23,7 @@ a {
   z-index: -9999;
 }
 .weather-app {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(218, 223, 225, 0.2);
   margin: 0 auto;
   padding: 30px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
@@ -35,7 +36,6 @@ a {
 header {
   border-bottom: 1px solid #f9f7fe;
   padding: 0 0 30px 0;
-
 }
 
 .search-text-input {
@@ -47,13 +47,17 @@ header {
 }
 
 .search-form-button {
-  background: aqua;
-  padding: 15px 30px;
+  background: rgb(55, 151, 220);
+  padding: 15px 38px;
   border: none;
   border-radius: 6px;
   color: #ffff;
   margin-left: 5px;
-  font-size: 16px;
+  font-size: 17px;
+}
+
+.search-form-button:hover {
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
 }
 
 main {
@@ -68,20 +72,22 @@ main {
 .weather-app-city {
   margin: 0;
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 200;
   line-height: 48px;
   top: 50%;
+  font-family: "Roboto", monospace;
+  color: #000;
 }
 
 .weather-app-details {
   font-size: 16px;
-  font-weight: 500;
   line-height: 20px;
-  color: rgba(39, 33, 66, 0.4);
+  color: rgba(39, 33, 66, 0.5);
+  font-weight: 400;
 }
 
 .weather-app-details strong {
-  color: blue;
+  color: #e2a320;
 }
 
 .weather-app-temperature-container {
@@ -107,6 +113,7 @@ main {
   margin-top: 30px;
   display: flex;
   justify-content: space-around;
+  font-family: "Montserrat", sans-serif;
 }
 
 .forecast-day {
