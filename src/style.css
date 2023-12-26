@@ -1,4 +1,4 @@
-body {
+body.day {
   font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
@@ -9,10 +9,17 @@ body {
   color: #000;
 }
 
-a {
-  color: rgb(55, 151, 220);
-  text-shadow: 0px 0px 3px rgba(255,255,255,0.2);
+body.night {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  color: #ffffff;
 }
+
 .video-background {
   position: fixed;
   top: 0;
@@ -76,27 +83,39 @@ main {
   line-height: 48px;
   top: 50%;
   font-family: "Roboto", monospace;
-  color: #000;
 }
 
-.weather-app-details {
+.weather-app-details.day {
   font-size: 16px;
   line-height: 20px;
-  color: rgba(39, 33, 66, 0.5);
+  color: rgba(39, 33, 66, 0.6);
+  font-weight: 400;
+}
+.weather-app-details.night {
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
 }
 
 .weather-app-details strong {
   color: #e2a320;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .weather-app-temperature-container {
   display: flex;
 }
 
-.temperature-value {
+.temperature-value.day {
   font-size: 88px;
   line-height: 88px;
+}
+
+.temperature-value.night {
+  font-size: 88px;
+  line-height: 88px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .icon {
@@ -117,7 +136,6 @@ main {
 }
 
 .forecast-day {
-  color: #000;
   opacity: 0.6;
   text-align: center;
   font-size: 16px;
@@ -143,10 +161,16 @@ main {
 .forecast-temperature {
   padding: 0 5px;
 }
+
 footer {
   border-top: 1px solid #f9f7fe;
   padding: 30px 0 0 0;
   text-align: center;
   font-size: 13px;
-  color: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  color: rgb(55, 151, 220);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
 }

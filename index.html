@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
-  <body class="fullscreen">
+  <body class="day">
     <div class="background">
       <video
         class="video-background"
@@ -47,7 +47,7 @@
         <div class="weather-app-container">
           <div>
             <h1 class="weather-app-city" id="weather-app-city"></h1>
-            <p class="weather-app-details">
+            <p class="weather-app-details day">
               <span id="current-date"></span>, <span id="description"></span>
               <br />
               Humidity: <strong id="humidity"></strong>, Wind:
@@ -56,7 +56,7 @@
           </div>
           <div class="weather-app-temperature-container">
             <span id="icon"> </span>️
-            <span class="temperature-value" id="temperature-value"></span>
+            <span class="temperature-value day" id="temperature-value"></span>
             <span class="unit">°C</span>
           </div>
         </div>
