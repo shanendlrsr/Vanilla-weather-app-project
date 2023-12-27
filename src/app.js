@@ -60,31 +60,33 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#current-date");
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
+  let conditionIcon = response.data.condition.icon;
   let videoElement = document.querySelector(".video-background");
-  if (response.data.condition.icon.includes("day")) {
+
+  if (conditionIcon.includes("day")) {
     changeTheme(true);
-    if (response.data.condition.icon.includes("few-clouds-day")) {
+    if (conditionIcon.includes("few-clouds-day")) {
       videoElement.src =
         "https://v3.cdnpk.net/videvo_files/video/free/2020-07/large_watermarked/06_1596083776_preview.mp4";
-    } else if (response.data.condition.icon.includes("scattered-clouds-day")) {
+    } else if (conditionIcon.includes("scattered-clouds-day")) {
       videoElement.src =
         "https://v3.cdnpk.net/videvo_files/video/free/2014-06/large_watermarked/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview.mp4";
-    } else if (response.data.condition.icon.includes("broken-clouds-day")) {
+    } else if (conditionIcon.includes("broken-clouds-day")) {
       videoElement.src =
         "https://cdn.coverr.co/videos/coverr-cloudy-sky-2765/1080p.mp4";
-    } else if (response.data.condition.icon.includes("shower-rain-day")) {
+    } else if (conditionIcon.includes("shower-rain-day")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/590779437/window-85180.mp4?width=1280&hash=c7ab3e6fad586b95060900bc09b322e17d558112";
-    } else if (response.data.condition.icon.includes("rain-day")) {
+    } else if (conditionIcon.includes("rain-day")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/889684869/rain-191224.mp4?width=1280&hash=57923f16faae1afbf18c982fefbc366c3373013c";
-    } else if (response.data.condition.icon.includes("thunderstorm-day")) {
+    } else if (conditionIcon.includes("thunderstorm-day")) {
       videoElement.src =
         "https://v3.cdnpk.net/videvo_files/video/free/2016-09/large_watermarked/lightning02_preview.mp4";
-    } else if (response.data.condition.icon.includes("snow-day")) {
+    } else if (conditionIcon.includes("snow-day")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/724673835/stars-120915.mp4?width=1280&hash=6eb4e8d19a86547094adc6366ad7754055d20bd1";
-    } else if (response.data.condition.icon.includes("mist-day")) {
+    } else if (conditionIcon.includes("mist-day")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/887815676/sky-190332.mp4?width=1280&hash=1588fff1e092b3d0b045d87ad806a810faefc0e0";
     } else {
@@ -93,30 +95,28 @@ function displayTemperature(response) {
     }
   } else {
     changeTheme(false);
-    if (response.data.condition.icon.includes("clear-sky-night")) {
+    if (conditionIcon.includes("clear-sky-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/767056247/stars-137617.mp4?width=1280&hash=059c853abee3020dfcfe552965d6af19434d19c4";
-    } else if (response.data.condition.icon.includes("few-clouds-night")) {
+    } else if (conditionIcon.includes("few-clouds-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/374487175/moon-29238.mp4?width=640&hash=c25270f6fda48e77e0e9b8db429c3b28bb782edb";
-    } else if (
-      response.data.condition.icon.includes("scattered-clouds-night")
-    ) {
+    } else if (conditionIcon.includes("scattered-clouds-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/362518474/crescent-moon-27186.mp4?width=1280&hash=57166797a2fb86db79f4e0de10dff2a527435637";
-    } else if (response.data.condition.icon.includes("broken-clouds-night")) {
+    } else if (conditionIcon.includes("broken-clouds-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/496654889/clouds-60766.mp4?width=1280&hash=350f7ed45dd0068dd38cc6e9e8a4b45fb190c85a";
-    } else if (response.data.condition.icon.includes("shower-rain-night")) {
+    } else if (conditionIcon.includes("shower-rain-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/368501609/rain-28236.mp4?width=640&hash=834994beb632a32cbbe285cce4a1868392d5d37f";
-    } else if (response.data.condition.icon.includes("rain-night")) {
+    } else if (conditionIcon.includes("rain-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/540486894/rain-71863.mp4?width=636&hash=11e03d159a59d3ed1ab06e8e0e6918a15094cd5d";
-    } else if (response.data.condition.icon.includes("thunderstorm-night")) {
+    } else if (conditionIcon.includes("thunderstorm-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/819589720/storm-159780.mp4?width=1280&hash=d8f3ccdfe6ea1e57a8a062f77bb61eef3a1c1e1c";
-    } else if (response.data.condition.icon.includes("snow-night")) {
+    } else if (conditionIcon.includes("snow-night")) {
       videoElement.src =
         "https://cdn.pixabay.com/vimeo/664525219/nature-103801.mp4?width=1280&hash=05bb9d0e16a0f61a5919f7ed1a2766224104acc1";
     } else {
@@ -142,6 +142,8 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
+searchCity("Melbourne");
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -150,8 +152,6 @@ searchFormElement.addEventListener("submit", function (event) {
   cityHeadingElement.innerHTML = searchInput.value;
   searchCity(searchInput.value);
 });
-
-searchCity("Melbourne");
 
 function getForecast(city) {
   let apiKey = "317afccdd083ao7966cf003b44bt370b";
@@ -174,21 +174,21 @@ function displayForecast(response) {
       forecastHtml =
         forecastHtml +
         `
-      <div class="weather-forecast-details">
-        <div class="forecast-day">${formatDay(day.time)}</div>
-        <div>
-            <img src="${day.condition.icon_url}" class="forecast-icon"/>
-        </div>
-        <div class="forecast-temperatures">
-          <div class="forecast-temperature">
-            <strong>${Math.round(day.temperature.maximum)}°</strong>
+        <div class="weather-forecast-details">
+          <div class="forecast-day">${formatDay(day.time)}</div>
+          <div>
+              <img src="${day.condition.icon_url}" class="forecast-icon"/>
           </div>
-          <div class="forecast-temperature">${Math.round(
-            day.temperature.minimum
-          )}°</div>
+          <div class="forecast-temperatures">
+            <div class="forecast-temperature">
+              <strong>${Math.round(day.temperature.maximum)}°</strong>
+            </div>
+            <div class="forecast-temperature">${Math.round(
+              day.temperature.minimum
+            )}°</div>
+          </div>
         </div>
-      </div>
-    `;
+        `;
     }
   });
   let forecastElement = document.querySelector("#forecast");
